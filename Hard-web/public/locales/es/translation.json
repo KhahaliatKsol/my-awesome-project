@@ -1,0 +1,41 @@
+{
+  "header": {
+    "title": "Aplicación de Gestión de Tareas",
+    "language": "Idioma",
+    "dark_mode": {
+      "switch_to_light_mode": "Cambiar a Modo Claro",
+      "switch_to_dark_mode": "Cambiar a Modo Oscuro"
+    }
+  },
+  "add_task": {
+    "placeholder_title": "Título de la Tarea",
+    "placeholder_description": "Descripción",
+    "placeholder_date": "Seleccionar Fecha y Hora",
+    "button_add": "Agregar Tarea",
+    "error_future_date": "Por favor selecciona una fecha y hora futura."
+  },
+  "task_list": {
+    "due_date": "Fecha de Vencimiento: ",
+    "complete": "Completar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "undo": "Deshacer",
+    "no_tasks": "No hay tareas disponibles"
+  },
+  "edit_task": {
+    "title": "Editar Tarea",
+    "button":{
+      "update":"Actualizar Tarea",
+      "cancel": "Cancelar"
+    }
+  },
+
+  "congrats_message": "🎉 ¡Felicitaciones por completar una tarea! 🎉",
+  "sort": {
+    "button_sort_by_date": "Ordenar por Fecha",
+    "sort_order": {
+      "asc": "Asc",
+      "desc": "Dsc"
+    }
+  }
+}

@@ -1,0 +1,183 @@
+/* General task list container */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px; /* Control max width */
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  /* Individual task items */
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Completed tasks with a subtle color difference */
+  .task-item.completed {
+    background-color: #e6f7e9; /* Light green */
+  }
+  
+  /* Hover effect for task items */
+  .task-item:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+  }
+  
+  /* Title styles */
+  .task-item h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333; /* Darker text */
+  }
+  
+  /* Description styles */
+  .task-item p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #666; /* Lighter text */
+  }
+  
+  /* Task buttons container */
+  .task-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Common button styles */
+  .task-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Complete button styles */
+  .complete-button {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .complete-button:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slight grow on hover */
+  }
+  
+  /* Edit button styles */
+  .edit-button {
+    background-color: #ffa726; /* Orange */
+  }
+  
+  .edit-button:hover {
+    background-color: #fb8c00; /* Darker orange */
+    transform: scale(1.05); /* Slight grow on hover */
+  }
+  
+  /* Delete button styles */
+  .delete-button {
+    background-color: #f44336; /* Red */
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935; /* Darker red */
+    transform: scale(1.05); /* Slight grow on hover */
+  }
+  
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .task-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .task-buttons {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  .task-item {
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .task-item .completed {
+    text-decoration: line-through; /* Line-through for completed task titles */
+    color: #030202; /* Change color to gray */
+  }
+  /* Add this to your CSS */
+.task-list.dark-mode {
+  background-color: #000000; /* Dark background */
+  color: #fff; /* Light text */
+}
+
+.task-item.dark-mode {
+  background-color: #000000; /* Dark item background */
+  color: #000000; /* Light text */
+}
+
+  /* Dark Mode Styles for Task List */
+.task-list.dark-mode {
+  background-color: #1e1e1e; /* Dark background for the task list */
+  color: #0b044b; /* Light text color */
+}
+
+.task-item {
+  background-color: #000000; /* Dark background for task items */
+  border-bottom: 1px solid #444; /* Darker border for task items */
+}
+
+.task-item.completed {
+  background-color: #3a3a3a; /* Slightly lighter background for completed tasks */
+}
+
+.task-item h3.dark-mode {
+  color: #ce0e0e; /* Light text color for titles */
+}
+
+.task-item p {
+  color: #bbbbbb; /* Light gray text for descriptions */
+}
+
+.task-item:hover {
+  background-color: #3e3e3e; /* Slightly lighter gray on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Task buttons container (remains unchanged) */
+.task-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Button styles for Dark Mode */
+.dark-mode .task-buttons button {
+  background-color: #444; /* Dark button background */
+}
+
+.dark-mode .task-buttons .complete-button {
+  background-color: #050805; /* Darker green for complete button */
+}
+
+.dark-mode .task-buttons .edit-button {
+  background-color: #D67F20; /* Darker orange for edit button */
+}
+
+.dark-mode .task-buttons .delete-button {
+  background-color: #C62828; /* Darker red for delete button */
+}
+
+.task-buttons button:hover {
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}

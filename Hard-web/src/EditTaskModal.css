@@ -1,0 +1,97 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9; /* Soft background */
+    padding: 20px; /* Reduced padding */
+    width: 100%;
+    max-width: 400px; /* Smaller width */
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .modal h2 {
+    font-size: 1.5rem; /* Smaller font */
+    color: #021d50;
+    margin-bottom: 15px; /* Reduced margin */
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(76, 91, 175, 0.5); /* Subtle text glow */
+  }
+  
+  .modal form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal input[type="text"],
+  .modal textarea,
+  .modal input[type="date"] {
+    width: 100%;
+    padding: 10px; /* Smaller padding */
+    margin-bottom: 15px; /* Reduced margin */
+    border-radius: 6px; /* Slightly rounded corners */
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem; /* Smaller font size */
+    transition: all 0.3s ease;
+  }
+  
+  .modal input[type="text"]:focus,
+  .modal textarea:focus,
+  .modal input[type="date"]:focus {
+    outline: none;
+    border-color: #4c5baf;
+    box-shadow: 0 0 8px rgba(76, 91, 175, 0.8);
+  }
+  
+  .modal textarea {
+    min-height: 80px; /* Reduced textarea height */
+    resize: none;
+  }
+  
+  .modal button {
+    padding: 10px 15px; /* Smaller padding */
+    margin: 5px 0;
+    border: none;
+    border-radius: 6px; /* Slightly rounded corners */
+    font-size: 0.9rem; /* Smaller font size */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .modal button[type="submit"] {
+    background-color: #4c5baf;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 8px rgba(76, 91, 175, 0.5);
+  }
+  
+  .modal button[type="submit"]:hover {
+    background-color: #09017c;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(76, 91, 175, 1);
+  }
+  
+  .modal button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .modal button[type="button"]:hover {
+    background-color: #bbb;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  

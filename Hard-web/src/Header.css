@@ -1,0 +1,101 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; 
+  padding: 20px;
+  background-color: #06054d; /* Light mode background */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Header shadow */
+  position: relative; /* For glow positioning */
+}
+
+.header-title {
+ text-align: center;
+ margin: 0;
+ text-transform: capitalize;
+  font-size: 24px;
+  color: #e8ec00;
+  text-shadow: 0 0 20px #e8ec00; /* Glow effect */
+}
+
+.dark_mode {
+  position: absolute;
+ 
+
+.dark_mode_input {
+  opacity: 0; /* Hide the default checkbox */
+  position: absolute;
+}
+
+.dark_mode_label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 60px; /* Adjust width if needed */
+  height: 34px;
+  background-color: #ccc; /* Light mode background for the toggle */
+  border-radius: 34px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  margin-left: 600px;
+
+}
+
+.slider {
+  position: absolute;
+  width: 30px; /* Size of the sun and moon */
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffec40; /* Sun color */
+  box-shadow: 0 0 20px rgba(255, 236, 64, 1); /* Increased glowing effect for the sun */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  top: 2px; /* Centering the slider */
+  left: 4px; /* Start position moved slightly to the left */
+}
+
+/* Dark mode styles */
+.dark-theme .header {
+  background-color: #333; /* Dark mode background */
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Header shadow in dark mode */
+}
+
+.dark-theme .header-title {
+  color: #f5f5f5; /* Light text in dark mode */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* Glow effect */
+}
+
+.dark_mode_label.dark-theme {
+  background-color: #555; /* Dark mode background for the toggle */
+}
+
+.dark-theme .slider {
+  transform: translateX(26px); /* Move to the right */
+  background-color: #fff; /* Change slider background for moon */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Increased glowing effect for the moon */
+}
+
+.icon {
+  width: 24px; /* Size of the icon */
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Centering */
+  transition: opacity 0.3s ease;
+}
+
+.icon[alt='Switch to Light Mode'] {
+  opacity: 0; /* Hide the moon when in light mode */
+}
+
+.dark-theme .icon[alt='Switch to Dark Mode'] {
+  opacity: 1; /* Show the moon when in dark mode */
+}
+
+.dark-theme .icon[alt='Switch to Light Mode'] {
+  opacity: 1; /* Show the sun when in dark mode */
+}

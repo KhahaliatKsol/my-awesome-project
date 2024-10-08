@@ -1,0 +1,639 @@
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f7; /* Light background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+/* Basic styles for the toggle switch container */
+.toggle-switch {
+  width: 60px;  /* Width of the toggle switch */
+  height: 30px; /* Height of the toggle switch */
+  background-color: #ccc; /* Default background color (inactive) */
+  border-radius: 15px; /* Rounded corners for the switch */
+  position: relative; /* Positioning context for the slider */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Active state for the toggle switch */
+.toggle-switch.active {
+  background-color: #4caf50; /* Background color when active */
+}
+
+/* Styles for the slider */
+.toggle-slider {
+  width: 27px; /* Width of the slider */
+  height: 27px; /* Height of the slider */
+  background-color: white; /* Color of the slider */
+  border-radius: 50%; /* Make the slider circular */
+  position: absolute; /* Positioning relative to the container */
+  top: 1px; /* Center the slider vertically */
+  left: 1px; /* Start position on the left */
+  transition: transform 0.3s; /* Smooth movement of the slider */
+}
+
+/* Move the slider to the right when active */
+.toggle-switch.active .toggle-slider {
+  transform: translateX(30px); /* Move to the right */
+}
+
+/* Optional: Styles for labels */
+.toggle-labels {
+  display: flex; /* Flexbox for label positioning */
+  justify-content: space-between; /* Space between labels */
+  font-size: 12px; /* Font size for labels */
+  margin-top: 5px; /* Margin above the labels */
+}
+
+/* Style for active and inactive labels */
+.toggle-labels .active {
+  color: #4caf50; /* Color for active label */
+}
+
+.toggle-labels .inactive {
+  color: #aaa; /* Color for inactive label */
+}
+
+body.darkmode{
+  background-color: #000000; /* Dark background for contrast */
+}
+:root.darkmode {
+  --background-color: rgb(0, 0, 0);
+  --text-color: (--text-color);
+}
+
+.app-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.app-container.dark-mode {
+  --background-color: #000000;
+  --text-color: white;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(100vh - 80px); /* Full height minus fixed header */
+  width: 100vw; /* Full width */
+ /* Allow scrolling within the container */
+  padding-top: 0px; 
+  top: 0px ;/* Space for fixed header */
+}
+
+/* Optional: Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .app-container {
+      padding-top: 60px; /* Adjust padding for smaller screens if necessary */
+  }
+}
+
+
+.header {
+  background-color: #021d50;
+  color: #fffb00;
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  text-align: center;
+  box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* Center the button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Add task form styles */
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+  gap: 10px; /* Space between fields */
+  margin-top: 20px;
+}
+
+.task-input,
+.task-textarea,
+.task-date {
+  padding: 10px;
+  border: 2px solid #0c0430; /* Green border */
+  border-radius: 5px;
+  width: 300px; /* Fixed width */
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.task-textarea {
+  resize: vertical; /* Allow vertical resizing */
+  height: 30px; /* Fixed height */
+}
+
+/* Input focus effect */
+.task-input:focus,
+.task-textarea:focus,
+.task-date:focus {
+  border-color: #01061d; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Placeholder Styles */
+input::placeholder,
+textarea::placeholder {
+  color: #000000; /* Placeholder color */
+  font-style: italic; /* Italic style */
+}
+
+/* Add Task button */
+.add-button {
+  padding: 12px 25px; /* Slightly larger padding for a better look */
+  background-color:  hsl(239, 76%, 29%); /* Blue */
+  color: rgb(244, 248, 0);
+  border: none;
+  border-radius: 8px; /* Softer, more rounded corners */
+  cursor: pointer;
+  transition: all 0.4s ease; /* Smoother transition */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
+              0 0 10px rgba(76, 91, 175, 0.8); /* Initial subtle glow */
+  position: relative;
+  font-size: 1rem; /* Slightly increase font size */
+}
+
+.add-button:hover {
+  background-color: hsl(244, 98%, 25%); /* Darker blue on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 
+              0 0 15px rgb(16, 37, 153), 
+              0 0 20px rgba(76, 91, 175, 0.8); /* Stronger glow on hover */
+  transform: scale(1.05); /* Slightly grow the button on hover */
+}
+
+.add-button:active {
+  transform: scale(1); /* Button returns to original size when clicked */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), 
+              0 0 8px rgba(76, 91, 175, 0.8); /* Reduced glow on click */
+}
+
+/* Optional: Add glowing animation */
+@keyframes glowing {
+  0% { box-shadow: 0 0 5px rgba(76, 91, 175, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(76, 91, 175, 1); }
+  100% { box-shadow: 0 0 5px rgba(17, 39, 165, 0.6); }
+}
+
+.add-button {
+  animation: glowing 2s infinite; /* Glowing animation */
+}
+
+/* TaskList styling */
+/* Make task container bigger */
+.task-list {
+  width: 100%;
+  max-width: 800px; /* Increased width to fit app layout */
+  margin: 20px auto; /* Centering the task list */
+  padding: 20px;
+  
+}
+
+/* Individual Task Styling */
+.task-item {
+  background-color: #e9f0fa; /* Light blue background for each task */
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Slight shadow for individual tasks */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #d3e4f7; /* Slightly darker background on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* More prominent shadow on hover */
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: flex-start; /* Align buttons next to each other */
+  gap: 10px; /* Add space between Add and Sort buttons */
+  margin-bottom: 20px;
+}
+
+/* Add Task Button */
+.add-button {
+  padding: 10px 20px;
+  background-color: #4c5baf; /* Blue base color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.add-button:hover {
+  background-color: #394593; /* Darker blue on hover */
+  box-shadow: 0 0 8px rgba(76, 91, 175, 0.6); /* Glowing effect */
+}
+
+/* Sort Task Button */
+.sort-button {
+  background-color: #ffca28; /* Yellow button */
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-button:hover {
+  background-color: #ffb300; /* Darker yellow on hover */
+  box-shadow: 0 0 8px rgba(255, 179, 0, 0.8); /* Glowing hover effect */
+}
+
+/* Task Title Styling */
+.task-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Task Description Styling */
+.task-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Task Due Date */
+.task-due-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.sort-button:hover {
+  background-color: #2c115f; /* Slightly darker yellow on hover */
+  box-shadow: 0 0 8px rgba(6, 14, 126, 0.8); /* Hover glow effect */
+}
+
+/* Align buttons next to each other */
+.button-container {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  align-items: center;
+}
+/* General app container */
+.app-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Congratulatory effect */
+.congrats {
+  color: #4caf50;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: fadeInOut 3s ease-in-out;
+  margin: 20px 0;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Sort button */
+.sort-button-container {
+  margin: 20px 0;
+}
+
+.sort-button {
+  padding: 10px 20px;
+  background-color: #0d3055;
+  color: rgb(243, 239, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sort-button:hover {
+  background-color: #112030;
+  transform: scale(1.05);
+}
+
+/* Task List */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 10px auto;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-item.completed {
+  background-color: #e6f7e9;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+}
+
+/* Task buttons */
+.task-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.complete-button {
+  background-color: #4caf50;
+}
+
+.complete-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.edit-button {
+  background-color: #ffa726;
+}
+
+.edit-button:hover {
+  background-color: #fb8c00;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #f44336;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+
+.task-item {
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Optionally, you can keep other styles as they are */
+
+.completed {
+  text-decoration: line-through; /* Adds the line-through effect */
+  color: green; /* Change the text color if desired */
+}
+
+/* ToggleButton.css */
+.toggle-switch {
+  width: 76px; /* Adjust as needed */
+  height: 30px; /* Adjust as needed */
+  border-radius: 15px;
+  background-color: #ccc; /* Inactive background */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center; /* Center labels vertically */
+}
+
+.toggle-switch.active {
+  background-color: #021d50; /* Active background */
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Glowing effect */
+}
+
+.toggle-slider {
+  width: 24px; /* Smaller circular slider */
+  height: 24px; /* Same as above */
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 3px; /* Center the slider vertically */
+  left: 3px; /* Center the slider horizontally */
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.active .toggle-slider {
+  transform: translateX(48px); /* Move to the right when active */
+}
+
+.toggle-labels {
+  display: flex;
+  justify-content: center; /* Center labels */
+  width: 100%; /* Ensure labels take full width */
+}
+
+.toggle-labels span {
+  font-weight: bold;
+  color: #000; /* Default color */
+  transition: color 0.3s ease;
+}
+
+.toggle-labels .active {
+  color: #4caf50; /* ASC label color */
+}
+
+.toggle-labels .inactive {
+  color: #f44336; /* DESC label color */
+}
+.button-group {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+  gap: 10px; /* Space between buttons */
+}
+.sort-button-container {
+  display: flex;
+  align-items: center; /* Aligns buttons and toggle vertically */
+  gap: 10px; /* Adjusts the spacing between buttons and toggle */
+}
+
+.sort-button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.app-container {
+  background-color: white;
+  color: black;
+}
+
+.app-container.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Other styles you might need for dark mode */
+/* General Styles */
+.app-container {
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.dark {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text color */
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Dark Mode for Task List */
+.task-list.dark-mode {
+  background-color: #f9fafa; /* Darker background for task list */
+  border: 1px solid #333; /* Optional border for separation */
+}
+
+.task-item {
+  background-color: #07c2c2; /* Light background for task items */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.task-item.completed {
+  text-decoration: line-through; /* Strikethrough for completed tasks */
+}
+
+/* Dark Mode for Task Item */
+.task-item.completed {
+  background-color: #2a2a2a; /* Dark background for completed tasks */
+}
+
+.task-buttons button {
+  margin-left: 10px;
+}
+
+/* Dark Mode Button Styles */
+.complete-button, .edit-button, .delete-button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.complete-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.edit-button {
+  background-color: #FFA500; /* Orange */
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+/* Dark Mode Button Colors */
+.dark .complete-button {
+  background-color: #3C763D; /* Darker green */
+}
+
+.dark .edit-button {
+  background-color: #D67F20; /* Darker orange */
+}
+
+.dark .delete-button {
+  background-color: #C62828; /* Darker red */
+}
+/* Dark Mode Styles for Task List */
+.task-list.dark-mode {
+  background-color: #1a1818; /* Dark background for the task list */
+  color: #ffffff; /* Light text color */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* More pronounced shadow for contrast */
+}
+
+/* Individual task items */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  border-bottom: 1px solid #444; /* Darker border for task items */
+  background-color: #3a858f; /* Dark background for task items */
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.task-item.darkmode  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  border-bottom: 1px solid #444; /* Darker border for task items */
+  background-color: #0c191b; /* Dark background for task items */
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Completed tasks with a subtle color difference */
+.task-item.completed {
+  background-color: #3a3a3a; /* Slightly lighter background for completed tasks */
+}
+
+/* Title styles */
+.task-item h3 p.darkmode {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #ffffff; /* Light text color for titles */
+}
+
+/* Description styles */
+.task-item p.darkmode  {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #bbbbbb; /* Light gray text for descriptions */
+}
+
+/* Hover effect for task items */
+.task-item:hover{
+  background-color: #04628d; /* Slightly lighter gray on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+/* App.css */
+.app-container .darkmode { /* Or just .darkmode if applicable */
+  background-color: #000000;
+   /* Example text color */
+}
+.full-app-container.dark-mode {
+  background-color: #000000;
+}

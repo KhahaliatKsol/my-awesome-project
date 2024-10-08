@@ -1,0 +1,41 @@
+{
+  "header": {
+    "title": "Task Management Application",
+    "language": "Language",
+    "dark_mode": {
+      "switch_to_light_mode": "Switch to Light Mode",
+      "switch_to_dark_mode": "Switch to Dark Mode"
+    }
+  },
+  "add_task": {
+    "placeholder_title": "Task Title",
+    "placeholder_description": "Description",
+    "placeholder_date": "Select Date and Time",
+    "button_add": "Add Task",
+    "error_future_date": "Please select a due date and time in the future."
+  },
+  "task_list": {
+    "due_date": "Due Date:",
+    "complete": "Complete",
+    "edit": "Edit",
+    "delete": "Delete",
+    "undo": "Undo",
+    "no_tasks": "No tasks available"
+  },
+ "edit_task": {
+    "title": "Edit Task",
+    "button":{
+      "update":"Update task",
+      "cancel": "Cancel"
+    }
+  },
+
+  "congrats_message": "🎉 Congratulations on completing a task! 🎉",
+  "sort": {
+    "button_sort_by_date": "Sort by Date",
+    "sort_order": {
+      "asc": "Asc",
+      "desc": "Desc"
+    }
+  }
+}
